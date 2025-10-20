@@ -4,6 +4,13 @@ require('dotenv').config()
 const app = express()
 const port = 3000
 
+const MySelf = {
+    'name': "Rajendra behera",
+    'profesion': "web developer, student",
+    'gender': "Male",
+    'age': 20
+}
+
 app.get('/', (req, res) => {
     res.send('Hello World!')
 })
@@ -14,11 +21,16 @@ app.get('/twitter', (req, res) => { // path should be 'This string' "we can't us
 
 // HOT reloading // node mole
 /*
-    When we create after our server is run 
+    When we create code after our server is run 
     the 
 */
+
 app.get('/login', (req, res) => {
     res.send('<h1>Plese login at EGATOR</h1>');
+})
+
+app.get('/rajendra', (req, res) => {
+    res.json(MySelf);
 })
 
 app.listen(process.env.PORT, () => {
